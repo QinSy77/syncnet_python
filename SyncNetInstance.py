@@ -145,7 +145,8 @@ class SyncNetInstance(torch.nn.Module):
         print('AV offset: \t%d \nMin dist: \t%.3f\nConfidence: \t%.3f' % (offset,minval,conf))
 
         dists_npy = numpy.array([ dist.numpy() for dist in dists ])
-        return offset.numpy(), conf.numpy(), dists_npy
+        #return offset.numpy(), conf.numpy(), dists_npy
+        return offset.numpy().item(),minval.numpy().item(),conf.numpy().item()
 
     def extract_feature(self, opt, videofile):
 

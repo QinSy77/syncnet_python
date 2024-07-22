@@ -102,12 +102,23 @@ class S(nn.Module):
         return out;
 
     def forward_lip(self, x):
-
+        #print(f"Shape of mid before reshaping: {x.shape}")
         mid = self.netcnnlip(x); 
+        #print(f"Shape of mid before reshaping: {mid.shape}")
         mid = mid.view((mid.size()[0], -1)); # N x (ch x 24)
         out = self.netfclip(mid);
 
         return out;
+
+    # def forward_lip(self, x):
+    #     mid = self.netcnnlip(x)
+    #     print(f"Shape of mid before reshaping: {mid.shape}")
+    #     batch_size = mid.size(0)
+    #     mid = mid.view(batch_size, -1)  # 调整为期望的形状
+    #     print(f"Shape of mid after reshaping: {mid.shape}")
+    #     out = self.netfclip(mid)
+    #     return out
+
 
     def forward_lipfeat(self, x):
 
