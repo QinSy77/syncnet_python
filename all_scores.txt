@@ -1,0 +1,1 @@
+File: /mnt/workspace/qinshiyang/AniPortrait/utils/stage2_score/video/guangfan.mp4, Sync Error: 15.863862991333008, Confidence: 0.4075965881347656, Offset: 15
